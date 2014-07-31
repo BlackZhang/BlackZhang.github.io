@@ -53,6 +53,42 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-07-31T07:08:49.000Z"><a href="/2014/07/31/GPU加速又称硬件加速/">7月 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/07/31/GPU加速又称硬件加速/">GPU加速又称硬件加速</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>控制的是textrue，GPU擅长对texture进行偏移，放大缩小，旋转，更改透明度；<br>Layer 模型：浏览器根据css样式生成Layer模型，再将Layer作为testrue上传至GPU，最后当改变Layer的transform, opacity属性时，渲染会跳过Layout, paint，直接通知GPU对Layer做变换。<br>其实说的直白一点，就是当你操作元素运动时，直接操作了最终的layers而跳过了paint和layout的过程。</p>
+<p>Layer触发条件</p>
+<p>3d或perspective transform属性<br>使用animation, transition改变opacity, transform的元素<br>video<br>canvas<br>flash<br>CSS filters<br>覆盖在Layer上的元素</p>
+<p>总结：<br>GPU节省了relayout的过程和再次Paint的时间；<br>节省了CPU向GPU传输位图的时间</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-07-31T04:00:46.000Z"><a href="/2014/07/31/my-new-post/">7月 31 2014</a></time>
       
       

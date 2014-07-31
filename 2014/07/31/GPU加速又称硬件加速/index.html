@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Black&#39;s Blog</title>
+  <title>GPU加速又称硬件加速 | Black&#39;s Blog</title>
   <meta name="author" content="Black">
   
   <meta name="description" content="This is my home.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="GPU加速又称硬件加速"/>
   <meta property="og:site_name" content="Black&#39;s Blog"/>
 
   
@@ -52,19 +52,20 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-07-31T04:00:46.000Z"><a href="/2014/07/31/my-new-post/">7月 31 2014</a></time>
+        <time datetime="2014-07-31T07:08:49.000Z"><a href="/2014/07/31/GPU加速又称硬件加速/">7月 31 2014</a></time>
       
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">GPU加速又称硬件加速</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>title: my new post<br>date: 2014-07-31 12:00:46</p>
-<h2 id="tags:[博客，文章]">tags:[博客，文章]</h2>
-<p>hexo new “my new post”</p>
+        <p>控制的是textrue，GPU擅长对texture进行偏移，放大缩小，旋转，更改透明度；<br>Layer 模型：浏览器根据css样式生成Layer模型，再将Layer作为testrue上传至GPU，最后当改变Layer的transform, opacity属性时，渲染会跳过Layout, paint，直接通知GPU对Layer做变换。<br>其实说的直白一点，就是当你操作元素运动时，直接操作了最终的layers而跳过了paint和layout的过程。</p>
+<p>Layer触发条件</p>
+<p>3d或perspective transform属性<br>使用animation, transition改变opacity, transform的元素<br>video<br>canvas<br>flash<br>CSS filters<br>覆盖在Layer上的元素</p>
+<p>总结：<br>GPU节省了relayout的过程和再次Paint的时间；<br>节省了CPU向GPU传输位图的时间</p>
 
       
     </div>
@@ -83,10 +84,8 @@
 
 <nav id="pagination" >
     
-    <a href="/2014/07/31/GPU加速又称硬件加速/" class="alignleft prev" >上一页</a>
     
-    
-    <a href="/2014/07/31/hello-world/" class="alignright next" >下一页</a>
+    <a href="/2014/07/31/my-new-post/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
