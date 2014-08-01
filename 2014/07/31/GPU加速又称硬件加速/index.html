@@ -66,6 +66,9 @@
 <p>Layer触发条件</p>
 <p>3d或perspective transform属性<br>使用animation, transition改变opacity, transform的元素<br>video<br>canvas<br>flash<br>CSS filters<br>覆盖在Layer上的元素</p>
 <p>总结：<br>GPU节省了relayout的过程和再次Paint的时间；<br>节省了CPU向GPU传输位图的时间</p>
+<p>GPU加速又称硬件加速</p>
+<p>GPU加速又称硬件加速<br>这是两个不同的渲染过程</p>
+<p>PS：触发layout的条件，尽量避免触发layout，因为触发一次layout就会进行一次paint上传的完整过程。<br>GPU也是有限度的，不要滥用GPU资源生成不必要的Layer<br>留意意外生成的Layer</p>
 
       
     </div>
@@ -83,6 +86,8 @@
 
 
 <nav id="pagination" >
+    
+    <a href="/2014/08/01/javascript+dom编程艺术/" class="alignleft prev" >上一页</a>
     
     
     <a href="/2014/07/31/hello-world/" class="alignright next" >下一页</a>
@@ -120,6 +125,15 @@ var duoshuoQuery = {short_name:"blackzhang"};
   
 
   
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/编程艺术/">编程艺术</a><small>1</small></li>
+  
+  </ul>
+</div>
+
 </aside>
     <div class="clearfix"></div>
   </div>
