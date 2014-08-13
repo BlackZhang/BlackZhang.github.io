@@ -73,7 +73,7 @@
     <span class="tag">&lt;<span class="title">col</span>&gt;</span>控制对应的列
     目前只支持width和background；
     实例一：
-    <span class="tag">&lt;<span class="title">xmp</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">code</span>&gt;</span>
         <span class="doctype">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;</span>
             <span class="tag">&lt;<span class="title">HTML</span>&gt;</span>
              <span class="tag">&lt;<span class="title">HEAD</span>&gt;</span>
@@ -125,10 +125,10 @@
             <span class="tag">&lt;/<span class="title">table</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">html</span>&gt;</span> 
-    <span class="tag">&lt;/<span class="title">xmp</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">code</span>&gt;</span>
     注释：两个<span class="tag">&lt;<span class="title">colgroup</span>&gt;</span>标签把表格按列分为两组，其中第二组占两列，每个列组设置了不同的样式。
     实例二：
-    <span class="tag">&lt;<span class="title">xmp</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">code</span>&gt;</span>
         <span class="tag">&lt;<span class="title">table</span> <span class="attribute">width</span>=<span class="value">"300"</span> <span class="attribute">border</span>=<span class="value">"2"</span> <span class="attribute">cellpadding</span>=<span class="value">"1"</span> <span class="attribute">cellspacing</span>=<span class="value">"0"</span> <span class="attribute">bordercolor</span>=<span class="value">"#000000"</span> <span class="attribute">frame</span>=<span class="value">"hsides"</span> <span class="attribute">rules</span>=<span class="value">"groups"</span>&gt;</span>
             <span class="tag">&lt;<span class="title">colgroup</span>&gt;</span><span class="tag">&lt;/<span class="title">colgroup</span>&gt;</span>
             <span class="tag">&lt;<span class="title">colgroup</span>&gt;</span><span class="tag">&lt;/<span class="title">colgroup</span>&gt;</span>
@@ -150,7 +150,7 @@
             <span class="tag">&lt;/<span class="title">tr</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">tbody</span>&gt;</span>
             <span class="tag">&lt;/<span class="title">table</span>&gt;</span> 
-    <span class="tag">&lt;/<span class="title">xmp</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">code</span>&gt;</span>
     注释：<span class="tag">&lt;<span class="title">thead</span>&gt;</span>和<span class="tag">&lt;<span class="title">tbody</span>&gt;</span>标签把表格按行分为两组，三个<span class="tag">&lt;<span class="title">colgroup</span>&gt;</span>标签把表格按列分为三组，<span class="tag">&lt;<span class="title">table</span>&gt;</span>标签的属性rules="groups"表示只显示组与组间的分界线，属性frame="hsides"表示只显示上下边框。
 </code></pre><p>2.line-height设置<br>    line-height:16px;//固定的16px；<br>    line-height:1em;//相对于父级字体大小，如：父级字号为30px；自身字号为16px；那么自身的行高为：30px；<br>    line-height:100%;//相对于父级字体大小，如：父级字号为30px；自身字号为16px；那么自身的行高为：30px；<br>    line-height:1;//相对于自身字号的大小，如：父级字号为30px；自身字号为16px；那么自身的行高为：16px；一般用于用户可以自定义字体大小的地方；<br>3.table制作单边线<br>    设置table，属性：border=”1”,css样式：border-collapse：collapse;<br>    设置table，,css样式：border-collapse：collapse; border:1px solid grey;<br>4.http地址<br>    www.baidu.com<br>    www.baidu.com/<br>    后面的‘/’当请求时会自动加上，相当于请求了两次，所以我们可以手动加上，减少请求；<br>5.自动生成有序数字<br>    body {counter-reset:name;}<br>    h1:before<br>    {<br>    counter-increment:name;<br>    content:”Section “ counter(name) “. “;<br>    }<br>    注释：如果已规定 !DOCTYPE，那么 Internet Explorer 8 （以及更高版本）支持 counter-increment 属性。<br>6.置换元素（replaced element）<br>    主要是指 img, input, textarea, select, object 等这类默认就有 CSS 格式化外表范围的元素。<br>    置换元素具有display：inline-block的特性；（内容由外部资源或用户创造的元素，除了置换以外的就是非置换元素）<br>    所有的行内置换元素默认拥有宽高，都是可以设置宽高的；<br>7.选择器的读取顺序<br>    读取的顺序是逆向的（从左到右）；<br>    如：.aa .bb p {}读取顺序是先p再.bb再.aa；</p>
 
