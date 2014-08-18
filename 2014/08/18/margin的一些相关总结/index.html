@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>关于z-index一些知识 | Black&#39;s Blog</title>
+  <title>margin的一些相关总结 | Black&#39;s Blog</title>
   <meta name="author" content="Black">
   
   <meta name="description" content="This is my home.">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="关于z-index一些知识"/>
+  <meta property="og:title" content="margin的一些相关总结"/>
   <meta property="og:site_name" content="Black&#39;s Blog"/>
 
   
@@ -52,33 +52,23 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-08-13T11:42:39.000Z"><a href="/2014/08/13/关于z-index一些知识/">8月 13 2014</a></time>
+        <time datetime="2014-08-18T09:30:17.000Z"><a href="/2014/08/18/margin的一些相关总结/">8月 18 2014</a></time>
       
       
   
-    <h1 class="title">关于z-index一些知识</h1>
+    <h1 class="title">margin的一些相关总结</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>在文档中，每个元素仅属于一个层叠上下文。元素的层叠级别为整型，它描述了在相同层叠上下文中元素在 “Z轴” 上的呈现顺序；<br>同一层叠上下文中，层叠级别大的显示在上，层叠级别小的显示在下，相同层叠级别时，遵循后来居上的原则，即其在HTML文档中的顺序；<br>不同层叠上下文中，元素呈现顺序以父级层叠上下文的层叠级别来决定呈现的先后顺序，与自身的层叠级别无关。</p>
-<p>对于定位元素而言，z-index 意味着：<br>    确定该元素在当前层叠上下文中的层叠级别。<br>    确定该元素是否创建了一个新的局部层叠上下文。</p>
-<p>当定位元素本身设置了z-index的值为非auto或默认的情况下，就产生了新的层叠上下文，那么它与它的子元素就处于了新的层叠上下文中；    </p>
-<p>如果一个元素没有创建新的层叠上下文，那么它就可以和它的兄弟、父级以及祖先处于同一个层叠上下文；换句话说就是它可以覆盖它兄弟、父级以及祖先元素的兄弟元素。（但是，在IE6、7下创建了新的层叠上下文，所以才会出现被父级或祖先级的兄弟所覆盖）<br>如果一个元素创建了新的层叠上下文，那么他就不能超出它父级的上下文，也就是说不能覆盖比他父级层级高的元素，即便它自身的层级足够高；</p>
-<p>opacity除了设置透明度，还跟层叠上下文有关系；<br>    当opacity值小于1时，该元素会创建新的局部层叠上下文，也就是说它可以和定位元素进行层叠层别比较<br>    当opacity值小于1时，该元素拥有层叠级别且相当于z-index:0或auto，但不能定义 z-index ，除非本身是定位元素<br>    此时的元素的层级高于普通的元素，类似于定位的但是没有设置z-index值得元素，唯一的区别是：此元素会创建局部的层叠上下文，而定位的但没有设置z-index值得元素不会创建层叠上下文；<br>    当一个普通元素定义了 opacity 为小于1的值时，该元素将像定位元素一样拥有层叠级别，可以覆盖普通元素，并且其层叠级别与未显式定义 z-index 的定位元素一样<br>    一旦一个元素设置了opacity小于1就创建了一个局部的层叠上下文，也就意味着再给此元素设置定位和z-index，那么他的子元素设置再高的的层级也不能覆盖他的兄弟元素啦；<br>总结：<br>    一.当定位元素不设置z-index值时，不会产生新的层叠上下文；（在IE6、7下会产生，所以出现bug）<br>    二.当定位元素设置了z-index值时，就会产生局部的层叠上下文；<br>    三.是否产生局部层叠上下文意味着其子元素，是不是可以通过提高层级来覆盖父级、以及祖先级的兄弟元素；<br>    四.opacity小于1时，也会提高元素层级，会比普通元素的层级要高；相当于定位元素不设置z-index值的元素；</p>
-
+        
       
     </div>
     <footer>
       
         
         
-  
-  <div class="tags">
-    <a href="/tags/css/">css</a>
-  </div>
-
         <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
 <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
       
@@ -90,10 +80,8 @@
 
 <nav id="pagination" >
     
-    <a href="/2014/08/18/margin的一些相关总结/" class="alignleft prev" >上一页</a>
     
-    
-    <a href="/2014/08/13/html高效总结/" class="alignright next" >下一页</a>
+    <a href="/2014/08/13/关于z-index一些知识/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
