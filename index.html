@@ -63,7 +63,37 @@
     </header>
     <div class="entry">
       
-        
+        <pre><code>margin与定位偏移（top/bottom/<span class="keyword">left</span>/<span class="keyword">right</span>）之间的关系
+    margin：<span class="type">CSS</span>中的margin用来添加盒子之间的水平和垂直间隙，说白了就是来添加元素与元素之间的空白；
+    定位偏移：一个元素的position属性值如果不为<span class="keyword">static</span>则发生定位。定位元素会产生定位盒，并且会根据 top, <span class="keyword">right</span>, bottom, <span class="keyword">left</span> 这<span class="number">4</span>个物理属性进行排版布局。（它只会影响他自身不会影响到其他元素，relative是相对于自身的顶部来定位的，absolute是相对于定位父级来定位的；）
+
+    当position为relative时，如果top和bottom都是auto，则它们的计算值是<span class="number">0</span>，<span class="keyword">right</span>和<span class="keyword">left</span>亦然；如果top和bottom其中一个为auto，则auto相当于另一个的负值，即top = -bottom，<span class="keyword">right</span>和<span class="keyword">left</span>亦然；如果top和bottom的值都不为auto，则忽略bottom，如果<span class="keyword">right</span>和<span class="keyword">left</span>的值都不为auto，则忽略<span class="keyword">right</span>。
+
+    absolute的定位偏移量是相对于包含块来计算的，并且是从包含padding算起的，子元素设置<span class="number">100</span>%时，宽度也是从包含padding算起的；如：父元素width:300px; height:300px; padding:50px;，那么子元素设置绝对定位，width:<span class="number">100</span>%; top:50px;那么实际的表现是，子元素宽为300px + 50px + 50px;距离父级的实际距离是<span class="number">0</span>；
+
+margin取值为百分比时是相对于谁来取值的    
+    margin的值为百分比时；是怎么取值的，这个是和书写方式有关的，默认情况下书写方式为： writing-mode: horizontal-tb; 和 direction: ltr;那么margin的百分比取值是相对于包含块的宽度来说的；当书写模式变成纵向的时候，其参照将会变成包含块的高度；可能一般的感性认知margin的上下值应该相对于包含块的高度来取值，左右是按照包含块的宽度来取值；但是那样的话就不能在上下左右设置相同的大小；
+
+margin外边距折叠
+    外边距折叠是指元素非浮动元素与周边盒子的最小距离，相邻的两个垂直方向上的外边距会叠加在一起，并显示取值更大的值；
+    <span class="number">1</span>.只有非浮动的元素才会发生叠加；
+    <span class="number">2</span>.只有垂直方向上的margin值才会叠加；
+    <span class="number">3</span>.发生折叠后取值为较大的margin值；
+    上面已经提到margin的取值受书写方式的影响，在这里margin的叠加方向也会受到影响；如果书写方式为默认的水平方向，那么margin的叠加方向就是垂直方向，如果书写方式改成垂直方向，那么margin的叠加方向就是水平方向；
+
+    什么情况下会出现相邻情况呢
+        <span class="number">1</span>.元素的上外边距和其属于常规流中的第一个孩子的上外边距。
+        <span class="number">2</span>.元素的下外边距和其属于常规流中的下一个兄弟的上外边距。
+        <span class="number">3</span>.属于常规流中的最后一个孩子的下外边距和其父亲的下外边距，如果其父亲的高度计算值为 auto。
+        <span class="number">4</span>.元素的上、下外边距，如果该元素没有建立新的块级格式上下文，且 <span class="built_in">min</span>-height 的计算值为零、height 的计算值为零或 auto、且没有属于常规流中的孩子。
+
+    如何避免margin折叠
+        margin 折叠元素只发生在块元素上；
+        浮动元素不与其他元素 margin 折叠；
+        定义了属性overflow且值不为visible（即创建了新的块级格式化上下文）的块元素，不与它的子元素发生margin 折叠；
+        绝对定位元素的 margin 不与任何 margin 发生折叠。
+        特殊：根元素的 margin 不与其它任何 margin 发生折叠；
+</code></pre>
       
     </div>
     <footer>
@@ -452,7 +482,7 @@
   <h3 class="title">标签</h3>
   <ul class="entry">
   
-    <li><a href="/tags/css/">css</a><small>1</small></li>
+    <li><a href="/tags/css/">css</a><small>2</small></li>
   
     <li><a href="/tags/javascript+dom编程艺术/">javascript+dom编程艺术</a><small>1</small></li>
   
